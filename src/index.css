@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* overlay & model  */
+  .overlay {
+    @apply fixed z-10 block w-full h-full;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .modal {
+    width: 20.5rem;
+    @apply fixed z-20 p-6 bg-white rounded font-Rubic top-1/2 left-1/2;
+    transform: translate(-50%, -50%);
+  }
+  .modal h2 {
+    @apply mb-4 text-xl font-bold text-neutral-darkBlue;
+  }
+  .modal p {
+    @apply mb-6 text-xl text-neutral-grayishBlue;
+  }
+  .modal .delete-btns-container {
+    @apply flex justify-between flex-nowrap;
+  }
+  .modal .delete-btns-container button {
+    @apply p-4 text-base font-bold rounded-lg bg-primary-softRed;
+    color: white;
+  }
+  .modal .delete-btns-container .delete-cancel-button {
+    @apply bg-neutral-grayishBlue;
+  }
+
+  .app {
+    @apply h-full min-h-screen px-4 py-12 font-Rubic bg-neutral-veryLightGray sm:px-8 md:px-10 lg:px-14;
+  }
+  .replies {
+    @apply mt-4 md:px-5 lg:px-8;
+  }
+  @media (min-width: 640px) {
+    .reply > div,
+    .comment > div.field-content-contianer {
+      @apply relative flex flex-col mb-4 bg-white rounded-md;
+      max-height: 40vh;
+    }
+    .comment > div.field-content {
+      max-height: none;
+    }
+    .reply > div > button,
+    .comment > div.comment-content-btn > button {
+      
+      @apply mt-4;
+      /* margin-bottom: 3vw; */
+      /* right: 3vw; */
+    }
+  }
+
+  .replies-container {
+    border-left: 3px solid #e8e9ed;
+    @apply px-4 md:px-5 lg:px-8;
+  }
+  .field {
+    @apply mb-4;
+  }
+  .field-content-btn {
+    @apply p-4 bg-white rounded-md sm:flex sm:justify-start sm:flex-col sm:p-6;
+  }
+  .field-container {
+    @apply relative bg-white rounded-md sm:flex;
+  }
+   /* .reply .field-container { 
+    @apply p-4 sm:flex sm:p-6;
+  } */
+  .field-info-div,
+  .reply-info-div {
+    flex-basis: 93%;
+  }
+  
+  .field .field-info-container {
+    @apply flex items-center justify-between mb-4;
+  }
+  .field .field-info-container .field-info {
+    @apply flex items-center flex-nowrap;
+  }
+  .field .field-info picture {
+    @apply w-10 mr-4;
+  }
+  .field .field-info .field-userName {
+    @apply mr-4 font-bold text-neutral-darkBlue;
+  }
+  .reply .reply-info .reply-userName {
+    @apply mr-2;
+  }
+  .youSpan {
+    @apply p-2 py-0 mr-3 text-sm text-white rounded-sm bg-primary-moderateBlue;
+  }
+  .field .field-info .field-created-time {
+    @apply text-neutral-grayishBlue;
+  }
+  .reply .reply-info .reply-created-time {
+    @apply text-sm md:text-base;
+  }
+  .field .field-content {
+    @apply mb-4 text-neutral-grayishBlue sm:mb-0;
+    word-break: break-word;
+  }
+  /* .field .field-content-updating {
+    @apply sm:mb-8 md:mb-12;
+  } */
+  .field .field-content span {
+    @apply font-bold text-primary-moderateBlue;
+  }
+  .field .field-actions {
+    @apply flex items-center justify-between mt-4 sm:mt-0;
+  }
+  .field .score {
+    @apply flex items-center p-1 px-2 bg-neutral-socreBg rounded-xl sm:mr-4 sm:flex-col sm:p-2 sm:py-4 sm:px-3;
+    /* w-10 */
+    height: fit-content;
+  }
+  .field .score > *:not(:last-child) {
+    @apply mr-5 sm:mb-5 sm:mr-0;
+  }
+  .field .score > p {
+    @apply font-bold text-primary-moderateBlue;
+  }
+  .field .score img {
+    @apply transition-all cursor-pointer;
+    height: fit-content;
+  }
+  .field .score img:hover {
+    filter: invert(91%) sepia(54%) saturate(1360%) hue-rotate(212deg)
+      brightness(95%) contrast(80%);
+  }
+  .reply-action,
+  .edit-action,
+  .delete-action {
+    @apply relative flex items-center font-bold transition-all cursor-pointer text-primary-moderateBlue hover:opacity-50;
+  }
+  .reply-action img,
+  .edit-action img,
+  .delete-action img {
+    @apply mr-2;
+  }
+  .delete-action {
+    @apply mr-3 text-primary-softRed;
+  }
+  .update-btn {
+    @apply p-2 px-3 text-white rounded-md bg-primary-moderateBlue sm:ml-auto sm:mr-0;
+    width: fit-content;
+  }
+  /* add comment styles */
+  .add-interaction {
+    @apply flex flex-col w-full p-4 bg-white;
+  } 
+  .add-reply {
+    @apply my-4
+  }
+  /* px-4 py-12 sm:px-8 md:px-10 lg:px-14 */
+  .add-interaction textarea {
+    @apply px-4 py-2 mb-4 border rounded-md border-neutral-lightGray md:mx-4 md:mb-0 lg:mx-5;
+    height: 5.5rem;
+  }
+  @media (min-width: 768px) {
+    .add-interaction textarea {
+      flex-basis: 100%;
+    }
+  }
+  .add-interaction textarea:focus {
+    outline: 1px solid #5457b6;
+  }
+  .add-interaction div {
+    @apply flex items-center justify-between md:items-start;
+  }
+  .add-interaction div picture {
+    @apply w-10;
+  }
+  @media (min-width: 768px) {
+    .add-interaction div picture {
+      min-width: 2.5rem;
+    }
+  }
+  .add-interaction div button { 
+    @apply px-6 py-3 text-white rounded-md bg-primary-moderateBlue hover:bg-opacity-70 transition-all;
+  }
+}
