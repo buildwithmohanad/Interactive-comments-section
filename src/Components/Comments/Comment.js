@@ -77,12 +77,12 @@ const Comment = ({ comment }) => {
                 <picture>
                   <source
                     srcSet={
-                      require(`./assets/${comment.user.image.webp}`).defualt
+                      require(/* webpackMode: "eager" */ `./assets/${comment.user.image.webp}`).defualt
                     }
                     alt={comment.user.username + " photo"}
                   />
                   <img
-                    src={require(`./assets/${comment.user.image.png}`).default}
+                    src={require(/* webpackMode: "eager" */ `./assets/${comment.user.image.png}`).default}
                     alt={comment.user.username + " photo"}
                   />
                 </picture>

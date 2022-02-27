@@ -38,11 +38,11 @@ export default function AddComment({ Data }) {
       <div className="">
         <picture>
           <source
-            srcSet={require(`./assets/${Data.currentUser.image.webp}`).default}
+            srcSet={/* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.webp}`).default}
             alt={Data.currentUser.username + " photo"}
           />
           <img
-            src={require(`./assets/${Data.currentUser.image.png}`).default}
+            src={/* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.png}`).default}
             alt={Data.currentUser.username + " photo"}
           />
         </picture>

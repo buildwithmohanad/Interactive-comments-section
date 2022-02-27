@@ -69,12 +69,12 @@ export default function Reply({ reply }) {
                 <picture>
                   <source
                     srcSet={
-                      require(`../assets/${reply.user.image.webp}`).default
+                      require(/* webpackMode: "eager" */ `../assets/${reply.user.image.webp}`).default
                     }
                     alt={reply.user.username + " photo"}
                   />
                   <img
-                    src={require(`../assets/${reply.user.image.png}`).default}
+                    src={require(/* webpackMode: "eager" */ `../assets/${reply.user.image.png}`).default}
                     alt={reply.user.username + " photo"}
                   />
                 </picture>

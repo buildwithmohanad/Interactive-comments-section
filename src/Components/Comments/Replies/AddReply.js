@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { replyToComment, replyToReply} from "../../../store/sectionSlice";
 import {useMediaQuery} from "react-responsive"
 export default function AddReply({ Data, commentUserName, replyUserName }) {
@@ -42,11 +42,11 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
       <div className="">
         <picture>
           <source
-            srcSet={require(`../assets/${Data.currentUser.image.webp}`).default}
+            srcSet={require( /* webpackMode: "eager" */`../assets/${Data.currentUser.image.webp}`).default}
             alt={Data.currentUser.username + " photo"}
           />
           <img
-            src={require(`../assets/${Data.currentUser.image.png}`).default}
+            src={require(/* webpackMode: "eager" */ `../assets/${Data.currentUser.image.png}`).default}
             alt={Data.currentUser.username + " photo"}
           />
         </picture>

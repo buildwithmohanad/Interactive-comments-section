@@ -4,7 +4,7 @@ export const fetchData = createAsyncThunk(
   (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const data = require("../Components/Comments/data.json");
+      const data = require(/* webpackMode: "eager" */ "../Components/Comments/data.json");
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
