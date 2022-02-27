@@ -74,6 +74,14 @@
   .field-info-div,
   .reply-info-div {
     flex-basis: 93%;
+
+  }
+  @media (min-width: 1024px) {
+    .field-info-div,
+    .reply-info-div {
+      flex-basis: 97%;
+  
+    }
   }
   
   .field .field-info-container {

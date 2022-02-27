@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](https://ux.plerdy.com/public/17921b30fdcd3d490ad1b4cc1672e42e)
+![screen shot](https://ux.plerdy.com/screens/2022-02-27/47368540d2b03d49e2e9e8836860582b.jpeg)
 
 ## My process
 
