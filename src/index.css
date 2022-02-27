@@ -50,8 +50,7 @@
     .comment > div.comment-content-btn > button {
       
       @apply mt-4;
-      /* margin-bottom: 3vw; */
-      /* right: 3vw; */
+
     }
   }
 
@@ -68,9 +67,7 @@
   .field-container {
     @apply relative bg-white rounded-md sm:flex;
   }
-   /* .reply .field-container { 
-    @apply p-4 sm:flex sm:p-6;
-  } */
+
   .field-info-div,
   .reply-info-div {
     flex-basis: 93%;
@@ -112,9 +109,7 @@
     @apply mb-4 text-neutral-grayishBlue sm:mb-0;
     word-break: break-word;
   }
-  /* .field .field-content-updating {
-    @apply sm:mb-8 md:mb-12;
-  } */
+
   .field .field-content span {
     @apply font-bold text-primary-moderateBlue;
   }
@@ -164,7 +159,6 @@
   .add-reply {
     @apply my-4
   }
-  /* px-4 py-12 sm:px-8 md:px-10 lg:px-14 */
   .add-interaction textarea {
     @apply px-4 py-2 mb-4 border rounded-md border-neutral-lightGray md:mx-4 md:mb-0 lg:mx-5;
     height: 5.5rem;
