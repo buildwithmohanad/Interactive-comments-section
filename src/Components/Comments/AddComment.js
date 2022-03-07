@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addComment } from "../../store/sectionSlice";
-import {useMediaQuery} from "react-responsive"
+import { useMediaQuery } from "react-responsive";
 export default function AddComment({ Data }) {
   let content = React.useRef("");
   const Dispatch = useDispatch();
-  const IsBigMedia =useMediaQuery({ query: '(min-width: 768px)' });
+  const IsBigMedia = useMediaQuery({ query: "(min-width: 768px)" });
+  const sendHundler = (event) => {
+    event.preventDefault();
 
-  const sendHundler = () => {
     let newComment = {
       id: Date.now(),
       content: content.current.value,
@@ -27,34 +28,43 @@ export default function AddComment({ Data }) {
     document.getElementById("add-comment-textarea").value = " ";
   };
   return (
-    <div className=" add-interaction ">
-      {!IsBigMedia && (
-        <textarea
-          id="add-comment-textarea"
-          placeholder="Add a comment..."
-          ref={content}
-        ></textarea>
-      )}
-      <div className="">
-        <picture>
-          <source
-            srcSet={/* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.webp}`).default}
-            alt={Data.currentUser.username + " photo"}
-          />
-          <img
-            src={/* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.png}`).default}
-            alt={Data.currentUser.username + " photo"}
-          />
-        </picture>
-        {IsBigMedia && (
+    <div className=" add-interaction">
+      <form>
+        {!IsBigMedia && (
           <textarea
-            placeholder="Add a comment..."
             id="add-comment-textarea"
+            placeholder="Add a comment..."
             ref={content}
           ></textarea>
         )}
-        <button onClick={sendHundler}>Send</button>
-      </div>
+        <div>
+          <picture>
+            <source
+              srcSet={
+                /* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.webp}`)
+                  .default
+              }
+              alt={Data.currentUser.username + " photo"}
+            />
+            <img
+              src={
+                /* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.png}`)
+                  .default
+              }
+              alt={Data.currentUser.username + " photo"}
+            />
+          </picture>
+
+          {IsBigMedia && (
+            <textarea
+              placeholder="Add a comment..."
+              id="add-comment-textarea"
+              ref={content}
+            ></textarea>
+          )}
+          <input type="submit" onClick={sendHundler} value="send" />
+        </div>
+      </form>
     </div>
   );
 }

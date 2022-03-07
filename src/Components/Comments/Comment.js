@@ -37,7 +37,7 @@ const Comment = ({ comment }) => {
     );
     Dispatch(clearEditingCommentId());
   };
-
+  let addReplyId = 500;
   return (
     <div className="comment field" data-testid={`comment_${comment.id}`}>
       <div className="field-content-btn">
@@ -56,7 +56,12 @@ const Comment = ({ comment }) => {
                 }
                 alt="score plus icon"
               />
-              <p id={`commentScore_${comment.id}`}>{comment.score}</p>
+              <p
+                id={`commentScore_${comment.id}`}
+                data-testid={`commentScore_${comment.content}`}
+              >
+                {comment.score}
+              </p>
               <img
                 src={iconMinus}
                 onClick={() =>
@@ -77,12 +82,12 @@ const Comment = ({ comment }) => {
                 <picture>
                   <source
                     srcSet={
-                      require(/* webpackMode: "eager" */ `./assets/${comment.user.image.webp}`).defualt
+                      require(`./assets/${comment.user.image.webp}`).defualt
                     }
                     alt={comment.user.username + " photo"}
                   />
                   <img
-                    src={require(/* webpackMode: "eager" */ `./assets/${comment.user.image.png}`).default}
+                    src={require(`./assets/${comment.user.image.png}`).default}
                     alt={comment.user.username + " photo"}
                   />
                 </picture>
@@ -110,7 +115,7 @@ const Comment = ({ comment }) => {
                       <div
                         className="edit-action"
                         id="edit-action"
-                        // data-testid={`comment_edit_action_${comment.content}`}
+                        data-testid={`comment_edit_action_${comment.content}`}
                         onClick={() =>
                           EditHundler(`commentContent_${comment.id}`)
                         }
@@ -136,6 +141,7 @@ const Comment = ({ comment }) => {
               className={
                 sectionSlice.editingCommentId !== comment.id && "field-content"
               }
+              data-testid={`commentContent_${comment.content}`}
               id={`commentContent_${comment.id}`}
             >
               {comment.content}
@@ -156,7 +162,12 @@ const Comment = ({ comment }) => {
                   }
                   alt="score plus icon"
                 />
-                <p id="fieldScore">{comment.score}</p>
+                <p
+                  id="commentScore"
+                  data-testid={`commentScore_${comment.content}`}
+                >
+                  {comment.score}
+                </p>
                 <img
                   src={iconMinus}
                   onClick={() =>
@@ -191,8 +202,8 @@ const Comment = ({ comment }) => {
                   {sectionSlice.editingCommentId !== comment.id && (
                     <div
                       className="edit-action"
-                      id="edit-actionss"
-                      // data-testid={`comment_edit_action_${comment.content}`}
+                      id="edit-action"
+                      data-testid={`comment_edit_action_${comment.content}`}
                       onClick={() =>
                         EditHundler(`commentContent_${comment.id}`)
                       }
@@ -243,6 +254,7 @@ const Comment = ({ comment }) => {
                   <>
                     <Reply key={reply.id} reply={reply} />
                     <AddReply
+                      key={addReplyId++}
                       Data={sectionSlice.Data}
                       replyUserName={reply.user.username + " "}
                     />
@@ -257,7 +269,5 @@ const Comment = ({ comment }) => {
       )}
     </div>
   );
-
-  //   return Comments;
 };
 export default Comment;

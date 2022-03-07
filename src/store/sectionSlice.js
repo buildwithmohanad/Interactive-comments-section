@@ -4,7 +4,7 @@ export const fetchData = createAsyncThunk(
   (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const data = require(/* webpackMode: "eager" */ "../Components/Comments/data.json");
+      const data = require("../Components/Comments/data.json");
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -29,11 +29,16 @@ export const sectionSlice = createSlice({
     replyScoreChangedTimes: [],
   },
   reducers: {
+    fetchLocalData: (state) => {
+      let localData = JSON.parse(localStorage.getItem("data"));
+      state.Data = localData;
+    },
     //comments
 
     //adding
     addComment: (state, action) => {
       state.Data.comments.push(action.payload);
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
 
     //deleting
@@ -45,6 +50,7 @@ export const sectionSlice = createSlice({
         (comment) => comment.id !== state.deletingCommentId
       );
       state.deletingCommentId = null;
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
     clearDeleteCommentId: (state) => {
       state.deletingCommentId = null;
@@ -61,6 +67,7 @@ export const sectionSlice = createSlice({
         }
         return comment;
       });
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
     clearEditingCommentId: (state) => {
       state.editingCommentId = null;
@@ -98,6 +105,7 @@ export const sectionSlice = createSlice({
         }
         return comment;
       });
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
 
     setreplyingToComment: (state, action) => {
@@ -111,6 +119,7 @@ export const sectionSlice = createSlice({
         return comment;
       });
       state.replyingToCommentId = null;
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
     //replies
 
@@ -132,6 +141,7 @@ export const sectionSlice = createSlice({
         };
       });
       state.deletingReplyId = null;
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
     clearDeletingReplyId: (state) => {
       state.deletingReplyId = null;
@@ -146,17 +156,20 @@ export const sectionSlice = createSlice({
         let replies = comment.replies.map((reply) => {
           if (reply.id === state.editingReplyId) {
             reply.content = action.payload;
-          } else {
-            return reply;
           }
+          // else {
+          //   return reply;
+          // }
+          return reply;
         });
         return { ...comment, replies };
       });
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
     clearEditingReplyId: (state) => {
       state.editingReplyId = null;
     },
-    
+
     //rating reply
     rateReply: (state, action) => {
       if (
@@ -175,8 +188,7 @@ export const sectionSlice = createSlice({
       );
 
       state.Data.comments.map((comment) => {
-
-        return comment.replies.map(reply => {
+        return comment.replies.map((reply) => {
           if (reply.id === action.payload.replyId) {
             if (action.payload.actionType === "increase") {
               if (scoreChangedTimes.ChangedTimes !== 1) {
@@ -190,10 +202,10 @@ export const sectionSlice = createSlice({
               }
             }
           }
-          return reply
-        })
-
+          return reply;
+        });
       });
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
     setreplyingToReply: (state, action) => {
       state.replyingToReplyId = action.payload;
@@ -205,19 +217,22 @@ export const sectionSlice = createSlice({
             let replyIndex = comment.replies.indexOf(reply) + 1;
             comment.replies.splice(replyIndex, 0, action.payload);
           }
+          return reply;
         });
 
         return comment;
       });
+      localStorage.setItem("data", JSON.stringify(state.Data));
+
       state.replyingToReplyId = null;
     },
   },
 
   // featch Data
   extraReducers: {
-
     [fetchData.fulfilled]: (state, action) => {
       state.Data = action.payload;
+      localStorage.setItem("data", JSON.stringify(state.Data));
     },
     [fetchData.rejected]: (state, action) => {
       state.error = action.payload;
@@ -245,6 +260,7 @@ export const {
   clearEditingReplyId,
   setreplyingToReply,
   replyToReply,
-  rateReply
+  rateReply,
+  fetchLocalData,
 } = sectionSlice.actions;
 export default sectionSlice.reducer;

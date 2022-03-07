@@ -8,13 +8,13 @@ import {
   setreplyingToReply,
   rateReply,
 } from "../../../store/sectionSlice";
+import { useMediaQuery } from "react-responsive";
 
 import iconPlus from "../assets/images/icon-plus.svg";
 import iconMinus from "../assets/images/icon-minus.svg";
 import iconReply from "../assets/images/icon-reply.svg";
 import iconEdit from "../assets/images/icon-edit.svg";
 import iconDelete from "../assets/images/icon-delete.svg";
-import { useMediaQuery } from "react-responsive";
 
 export default function Reply({ reply }) {
   const { Data, editingReplyId } = useSelector((state) => state.sectionSlice);
@@ -33,9 +33,7 @@ export default function Reply({ reply }) {
     );
     Dispatch(clearEditingReplyId());
   };
-  const ReplyHundler = (id) => {
-    Dispatch(setreplyingToReply(id));
-  };
+
   return (
     <div className="field reply" data-testid={`reply_${reply.id}`}>
       <div className="field-content-btn">
@@ -49,9 +47,10 @@ export default function Reply({ reply }) {
                     rateReply({ actionType: "increase", replyId: reply.id })
                   )
                 }
-                alt="score plus icon"
+                alt="reply_score_plus_icon"
+                data-testid={`reply_score_plus_${reply.content}`}
               />
-              <p>{reply.score}</p>
+              <p data-testid={`replyScore_${reply.content}`}>{reply.score}</p>
               <img
                 src={iconMinus}
                 onClick={() =>
@@ -59,7 +58,8 @@ export default function Reply({ reply }) {
                     rateReply({ actionType: "decrease", replyId: reply.id })
                   )
                 }
-                alt="score minus icon"
+                alt="reply_score_minus_icon"
+                data-testid={`reply_score_minus_${reply.content}`}
               />
             </div>
           )}
@@ -69,12 +69,12 @@ export default function Reply({ reply }) {
                 <picture>
                   <source
                     srcSet={
-                      require(/* webpackMode: "eager" */ `../assets/${reply.user.image.webp}`).default
+                      require(`../assets/${reply.user.image.webp}`).default
                     }
                     alt={reply.user.username + " photo"}
                   />
                   <img
-                    src={require(/* webpackMode: "eager" */ `../assets/${reply.user.image.png}`).default}
+                    src={require(`../assets/${reply.user.image.png}`).default}
                     alt={reply.user.username + " photo"}
                   />
                 </picture>
@@ -101,6 +101,7 @@ export default function Reply({ reply }) {
                       <div
                         className="edit-action"
                         id="edit-action"
+                        data-testid={`reply_edit_action_${reply.content}`}
                         onClick={() => EditHundler(reply.id)}
                       >
                         <img src={iconEdit} alt="edit icon" />
@@ -111,7 +112,8 @@ export default function Reply({ reply }) {
                 ) : (
                   <div
                     className="reply-action"
-                    onClick={() => ReplyHundler(reply.id)}
+                    data-testid={`reply_reply_action_${reply.id}`}
+                    onClick={() => Dispatch(setreplyingToReply(reply.id))}
                   >
                     <img src={iconReply} alt="reply icon" />
                     Reply
@@ -122,6 +124,7 @@ export default function Reply({ reply }) {
             <p
               suppressContentEditableWarning={true}
               className="field-content"
+              data-testid={`replyContent_${reply.content}`}
               id={`replyContent_${reply.id}`}
             >
               {
@@ -146,9 +149,12 @@ export default function Reply({ reply }) {
                       rateReply({ actionType: "increase", replyId: reply.id })
                     )
                   }
-                  alt="score plus icon"
+                  alt="reply_score_plus_icon"
+                  data-testid={`reply_score_plus_${reply.content}`}
                 />
-                <p id="replyScore">{reply.score}</p>
+                <p id="replyScore" data-testid={`replyScore_${reply.content}`}>
+                  {reply.score}
+                </p>
                 <img
                   src={iconMinus}
                   onClick={() =>
@@ -156,7 +162,8 @@ export default function Reply({ reply }) {
                       rateReply({ actionType: "decrease", replyId: reply.id })
                     )
                   }
-                  alt="score minus icon"
+                  alt="reply_score_minus_icon"
+                  data-testid={`reply_score_minus_${reply.content}`}
                 />
               </div>
               {reply.user.username === Data.currentUser.username ? (
@@ -180,7 +187,9 @@ export default function Reply({ reply }) {
                   {editingReplyId !== reply.id && (
                     <div
                       className="edit-action"
-                      id="edit-actionss"
+                      id="edit-action"
+                      data-testid={`reply_edit_action_${reply.content}`}
+
                       onClick={() => EditHundler(reply.id)}
                     >
                       <img src={iconEdit} alt="edit icon" />
@@ -192,7 +201,8 @@ export default function Reply({ reply }) {
                 <div className="field-actions">
                   <div
                     className="reply-action"
-                    onClick={() => ReplyHundler(reply.id)}
+                    data-testid={`reply_reply_action_${reply.id}`}
+                    onClick={() => Dispatch(setreplyingToReply(reply.id))}
                   >
                     <img src={iconReply} alt="reply icon" />
                     Reply

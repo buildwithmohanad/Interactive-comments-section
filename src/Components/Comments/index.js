@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Comment from "./Comment";
 import AddComment from "./AddComment";
-import { fetchData } from "../../store/sectionSlice.js";
+import { fetchData, fetchLocalData } from "../../store/sectionSlice.js";
 function Comments() {
   const sectionSlice = useSelector((state) => state.sectionSlice);
 
@@ -11,8 +11,11 @@ function Comments() {
 
   // fetch Data
   useEffect(() => {
-    Dispatch(fetchData());
-    // Dispatch(anyAction()) this will work 
+    if(localStorage.getItem("data") !== null) {
+      Dispatch(fetchLocalData())
+    } else {
+      Dispatch(fetchData());
+    }
   }, [Dispatch]);
   return (
     <>

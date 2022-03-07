@@ -33,6 +33,11 @@ Users should be able to:
 
 ![screen shot](https://ux.plerdy.com/screens/2022-02-27/47368540d2b03d49e2e9e8836860582b.jpeg)
 
+### Links
+
+- Solution URL: [Add solution URL here](https://github.com/Mohannad-AlDardiri/Interactieve-comments-section)
+- Live Site URL: [Add live site URL here](https://mohannad-aldardiri.github.io/Interactieve-comments-section)
+
 ## My process
 
 ### Built with
@@ -45,16 +50,17 @@ Users should be able to:
 - [Tailwind css](https://tailwindcss.com/) - For styles
 
 ### What I learned
-  in this project, I have met with some libraries like [react responsive](https://contra.io/react-responsive/) and [react testing library](https://testing-library.com/) 
- and I have learned how to fetch data with redux toolkit by create async thunk function 
 
- ### Continued development
+in this project, I have met with some libraries like [react responsive](https://contra.io/react-responsive/) and [react testing library](https://testing-library.com/)
+and I have learned how to fetch data with redux toolkit by create async thunk function
+
+### Continued development
 
 I'll focus in the future on JS local storage
 
 ### Useful resources
 
-- [DEV community](https://dev.to/) - In this community, there is a lot of professional articles that helped me a lot in this project  
+- [DEV community](https://dev.to/) - In this community, there is a lot of professional articles that helped me a lot in this project
 - [Webpack and Dynamic Imports](https://medium.com/front-end-weekly/webpack-and-dynamic-imports-doing-it-right-72549ff49234) - This is an amazing article which helped me with dynamic imports. I'd recommend it to anyone still learning this concept.
 
 ## Author
@@ -63,4 +69,3 @@ I'll focus in the future on JS local storage
 - Twitter - [@mohand_dev](https://www.twitter.com/mohand_dev)
 
 ## Acknowledgments
-

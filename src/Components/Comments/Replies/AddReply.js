@@ -6,8 +6,8 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
   let content = React.useRef("");
   const Dispatch = useDispatch();
   const IsBigMedia =useMediaQuery({ query: '(min-width: 768px)' });
-
-  const sendHundler = () => {
+  const sendHundler = (event) => {
+    event.preventDefault();
     let replyingToUserName = commentUserName ? commentUserName : replyUserName;
     let newReply = {
       id: Date.now(),
@@ -34,7 +34,7 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
     <div className="add-interaction add-reply">
       {!IsBigMedia && (
         <textarea
-          id="add-comment-textarea"
+          id="add-reply-textarea"
           placeholder="Add a Reply..."
           ref={content}
         ></textarea>
@@ -42,11 +42,11 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
       <div className="">
         <picture>
           <source
-            srcSet={require( /* webpackMode: "eager" */`../assets/${Data.currentUser.image.webp}`).default}
+            srcSet={require(`../assets/${Data.currentUser.image.webp}`).default}
             alt={Data.currentUser.username + " photo"}
           />
           <img
-            src={require(/* webpackMode: "eager" */ `../assets/${Data.currentUser.image.png}`).default}
+            src={require (`../assets/${Data.currentUser.image.png}`).default}
             alt={Data.currentUser.username + " photo"}
           />
         </picture>
@@ -57,7 +57,7 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
             ref={content}
           ></textarea>
         )}
-        <button onClick={sendHundler}>Send</button>
+        <input type="submit" onClick={sendHundler} data-testid="addreply-sendBtn" value="Send"/>
       </div>
     </div>
   );

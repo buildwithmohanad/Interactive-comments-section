@@ -160,7 +160,7 @@
     @apply my-4
   }
   .add-interaction textarea {
-    @apply px-4 py-2 mb-4 border rounded-md border-neutral-lightGray md:mx-4 md:mb-0 lg:mx-5;
+    @apply px-4 py-2 mb-4 border rounded-md border-neutral-lightGray md:mx-4 md:mb-0 lg:mx-5 w-full;
     height: 5.5rem;
   }
   @media (min-width: 768px) {
@@ -182,7 +182,7 @@
       min-width: 2.5rem;
     }
   }
-  .add-interaction div button { 
+  .add-interaction div input { 
     @apply px-6 py-3 text-white rounded-md bg-primary-moderateBlue hover:bg-opacity-70 transition-all;
   }
 }
