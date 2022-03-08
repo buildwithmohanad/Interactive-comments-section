@@ -1,5 +1,5 @@
 {
-  "homepage": "http://Mohannad-AlDardiri.github.io/REBONAME",
+  "homepage": "http://Mohannad-AlDardiri.github.io/Interactive-comments-section",
   "name": "app",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "css-loader": "^6.7.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss-loader": "^6.2.1",
     "react": "^17.0.2",

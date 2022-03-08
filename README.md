@@ -11,10 +11,8 @@ This is a solution to the [Interactive comments section challenge on Frontend Me
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -36,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/Mohannad-AlDardiri/Interactieve-comments-section)
-- Live Site URL: [Add live site URL here](https://mohannad-aldardiri.github.io/Interactieve-comments-section)
+- Live Site URL: [Add live site URL here](https://mohannad-aldardiri.github.io/Interactive-comments-section)
 
 ## My process
 
@@ -54,10 +52,6 @@ Users should be able to:
 in this project, I have met with some libraries like [react responsive](https://contra.io/react-responsive/) and [react testing library](https://testing-library.com/)
 and I have learned how to fetch data with redux toolkit by create async thunk function
 
-### Continued development
-
-I'll focus in the future on JS local storage
-
 ### Useful resources
 
 - [DEV community](https://dev.to/) - In this community, there is a lot of professional articles that helped me a lot in this project
@@ -67,5 +61,3 @@ I'll focus in the future on JS local storage
 
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 - Twitter - [@mohand_dev](https://www.twitter.com/mohand_dev)
-
-## Acknowledgments
