@@ -44,12 +44,12 @@ describe("editing comment", () => {
       </Provider>
     );
     fireEvent.change(await screen.findByPlaceholderText(/Add a comment.../i), {
-      target: { value: "blablabla" },
+      target: { value: "sdfafeweewra" },
     });
     screen.getByText(/Send/i).click();
 
-    let paragraphElement = screen.getByTestId(/commentContent_blablabla/i);
-    let editEl = screen.getByTestId(/comment_edit_action_blablabla/i);
+    let paragraphElement = screen.getByTestId(/commentContent_sdfafeweewra/i);
+    let editEl = screen.getByTestId(/comment_edit_action_sdfafeweewra/i);
     fireEvent.click(editEl);
     setTimeout(() => {
       expect(paragraphElement.contentEditable).toEqual("true");
@@ -68,11 +68,11 @@ describe("upvote and downvote comment", () => {
     );
     // add comment
     fireEvent.change(await screen.findByPlaceholderText(/Add a comment.../i), {
-      target: { value: "blablabla" },
+      target: { value: "safew" },
     });
     screen.getByText(/Send/i).click();
-
-    let commentScoreElement = screen.getByTestId(/commentScore_blablabla/i);
+   
+    let commentScoreElement = screen.getByTestId(/commentScore_safew/i);
     expect(commentScoreElement.innerHTML).toEqual("0");
     let plusIcon = await screen
       .findAllByAltText(/score plus icon/i)
@@ -88,10 +88,10 @@ describe("upvote and downvote comment", () => {
     );
     // add comment
     fireEvent.change(await screen.findByPlaceholderText(/Add a comment.../i), {
-      target: { value: "blablabla" },
+      target: { value: "iouyio" },
     });
     screen.getByText(/Send/i).click();
-    let commentScoreElement = screen.getByTestId(/commentScore_blablabla/i);
+    let commentScoreElement = screen.getByTestId(/commentScore_iouyio/i);
     expect(commentScoreElement.innerHTML).toEqual("0");
     let minusIcon = await screen
       .findAllByAltText(/score minus icon/i)
@@ -107,10 +107,10 @@ describe("upvote and downvote comment", () => {
     );
     // add comment
     fireEvent.change(await screen.findByPlaceholderText(/Add a comment.../i), {
-      target: { value: "blablabla" },
+      target: { value: "wreww" },
     });
     screen.getByText(/Send/i).click();
-    let commentScoreElement = screen.getByTestId(/commentScore_blablabla/i);
+    let commentScoreElement = screen.getByTestId(/commentScore_wreww/i);
     expect(commentScoreElement.innerHTML).toEqual("0");
     let plusIcon = await screen
       .findAllByAltText(/score plus icon/i)
@@ -127,11 +127,11 @@ describe("upvote and downvote comment", () => {
     );
     // add comment
     fireEvent.change(await screen.findByPlaceholderText(/Add a comment.../i), {
-      target: { value: "blablabla" },
+      target: { value: "dtyj" },
     });
     screen.getByText(/Send/i).click();
 
-    let commentScoreElement = screen.getByTestId(/commentScore_blablabla/i);
+    let commentScoreElement = screen.getByTestId(/commentScore_dtyj/i);
     expect(commentScoreElement.innerHTML).toEqual("0");
     let minusIcon = await screen
       .findAllByAltText(/score minus icon/i)

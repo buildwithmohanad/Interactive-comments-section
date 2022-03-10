@@ -16,12 +16,12 @@ describe("upvoting and downvoting reply", () => {
       .findByTestId(/reply_reply_action_50/i)
       .then((el) => el.click());
     fireEvent.change(screen.getByPlaceholderText(/Add a Reply.../i), {
-      target: { value: "testingReply" },
+      target: { value: "sfewop reply" },
     });
     screen.getByTestId(/addreply-sendBtn/i).click();
 
-    let replyScoreEl = screen.getByTestId(/replyScore_testingReply/i);
-    let replyPlusScoreEl = screen.getByTestId(/reply_score_plus_testingReply/i);
+    let replyScoreEl = screen.getByTestId(/replyScore_sfewop reply/i);
+    let replyPlusScoreEl = screen.getByTestId(/reply_score_plus_sfewop reply/i);
 
     expect(replyScoreEl.innerHTML).toEqual("0");
     replyPlusScoreEl.click();
@@ -38,13 +38,13 @@ describe("upvoting and downvoting reply", () => {
       .findByTestId(/reply_reply_action_50/i)
       .then((el) => el.click());
     fireEvent.change(screen.getByPlaceholderText(/Add a Reply.../i), {
-      target: { value: "testingReply" },
+      target: { value: "opoyierw reply" },
     });
     screen.getByTestId(/addreply-sendBtn/i).click();
 
-    let replyScoreEl = screen.getByTestId(/replyScore_testingReply/i);
+    let replyScoreEl = screen.getByTestId(/replyScore_opoyierw reply/i);
     let replyMinusScoreEl = screen.getByTestId(
-      /reply_score_minus_testingReply/i
+      /reply_score_minus_opoyierw reply/i
     );
 
     expect(replyScoreEl.innerHTML).toEqual("0");
@@ -62,12 +62,12 @@ describe("upvoting and downvoting reply", () => {
       .findByTestId(/reply_reply_action_50/i)
       .then((el) => el.click());
     fireEvent.change(screen.getByPlaceholderText(/Add a Reply.../i), {
-      target: { value: "testingReply" },
+      target: { value: "op.,ium reply" },
     });
     screen.getByTestId(/addreply-sendBtn/i).click();
 
-    let replyScoreEl = screen.getByTestId(/replyScore_testingReply/i);
-    let replyPlusScoreEl = screen.getByTestId(/reply_score_plus_testingReply/i);
+    let replyScoreEl = screen.getByTestId(/replyScore_op.,ium reply/i);
+    let replyPlusScoreEl = screen.getByTestId(/reply_score_plus_op.,ium reply/i);
 
     expect(replyScoreEl.innerHTML).toEqual("0");
     replyPlusScoreEl.click();
@@ -85,13 +85,13 @@ describe("upvoting and downvoting reply", () => {
       .findByTestId(/reply_reply_action_50/i)
       .then((el) => el.click());
     fireEvent.change(screen.getByPlaceholderText(/Add a Reply.../i), {
-      target: { value: "testingReply" },
+      target: { value: "wer;xfpove reply" },
     });
     screen.getByTestId(/addreply-sendBtn/i).click();
 
-    let replyScoreEl = screen.getByTestId(/replyScore_testingReply/i);
+    let replyScoreEl = screen.getByTestId(/replyScore_wer;xfpove reply/i);
     let replyMinusScoreEl = screen.getByTestId(
-      /reply_score_minus_testingReply/i
+      /reply_score_minus_wer;xfpove reply/i
     );
 
     expect(replyScoreEl.innerHTML).toEqual("0");
@@ -112,12 +112,12 @@ describe("editing reply", () => {
       .findByTestId(/reply_reply_action_50/i)
       .then((el) => el.click());
     fireEvent.change(screen.getByPlaceholderText(/Add a Reply.../i), {
-      target: { value: "testingReply" },
+      target: { value: "replyslfew" },
     });
     screen.getByTestId(/addreply-sendBtn/i).click();
 
-    let paragraphElement = screen.getByTestId(/replyContent_testingReply/i);
-    let editEl = screen.getByTestId(/reply_edit_action_testingReply/i);
+    let paragraphElement = screen.getByTestId(/replyContent_replyslfew/i);
+    let editEl = screen.getByTestId(/reply_edit_action_replyslfew/i);
     fireEvent.click(editEl);
 
     setTimeout(() => {
@@ -142,12 +142,12 @@ describe("editing reply", () => {
       .findByTestId(/reply_reply_action_50/i)
       .then((el) => el.click());
     fireEvent.change(screen.getByPlaceholderText(/Add a Reply.../i), {
-      target: { value: "testingReply" },
+      target: { value: "replysfafewarewr" },
     });
     screen.getByTestId(/addreply-sendBtn/i).click();
 
-    let paragraphElement = screen.getByTestId(/replyContent_testingReply/i);
-    let editEl = screen.getByTestId(/reply_edit_action_testingReply/i);
+    let paragraphElement = screen.getByTestId(/replyContent_replysfafewarewr/i);
+    let editEl = screen.getByTestId(/reply_edit_action_replysfafewarewr/i);
     fireEvent.click(editEl);
     setTimeout(() => {
       expect(paragraphElement.contentEditable).toEqual("true");
