@@ -41,15 +41,15 @@ export default function AddComment({ Data }) {
           <picture>
             <source
               srcSet={
-                /* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.webp}`)
-                  .default
+                window.location.origin +
+                `/assets/${Data.currentUser.image.webp}`
               }
               alt={Data.currentUser.username + " photo"}
             />
             <img
               src={
-                /* webpackMode: "eager" */ require(`./assets/${Data.currentUser.image.png}`)
-                  .default
+                window.location.origin +
+                `/assets/${Data.currentUser.image.png}`
               }
               alt={Data.currentUser.username + " photo"}
             />

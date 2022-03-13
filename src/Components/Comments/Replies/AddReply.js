@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { replyToComment, replyToReply} from "../../../store/sectionSlice";
-import {useMediaQuery} from "react-responsive"
+import { replyToComment, replyToReply } from "../../../store/sectionSlice";
+import { useMediaQuery } from "react-responsive";
 export default function AddReply({ Data, commentUserName, replyUserName }) {
   let content = React.useRef("");
   const Dispatch = useDispatch();
-  const IsBigMedia =useMediaQuery({ query: '(min-width: 768px)' });
+  const IsBigMedia = useMediaQuery({ query: "(min-width: 768px)" });
   const sendHundler = (event) => {
     event.preventDefault();
     let replyingToUserName = commentUserName ? commentUserName : replyUserName;
@@ -23,10 +23,10 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
         username: Data.currentUser.username,
       },
     };
-    if (commentUserName ) {
+    if (commentUserName) {
       Dispatch(replyToComment(newReply));
     } else {
-      Dispatch(replyToReply(newReply))
+      Dispatch(replyToReply(newReply));
     }
     document.getElementById("add-comment-textarea").value = " ";
   };
@@ -39,14 +39,18 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
           ref={content}
         ></textarea>
       )}
-      <div className="">
+      <div>
         <picture>
           <source
-            srcSet={require(`../assets/${Data.currentUser.image.webp}`).default}
+            srcSet={
+              window.location.origin + `/assets/${Data.currentUser.image.webp}`
+            }
             alt={Data.currentUser.username + " photo"}
           />
           <img
-            src={require (`../assets/${Data.currentUser.image.png}`).default}
+            src={
+              window.location.origin + `/assets/${Data.currentUser.image.png}`
+            }
             alt={Data.currentUser.username + " photo"}
           />
         </picture>
@@ -57,7 +61,12 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
             ref={content}
           ></textarea>
         )}
-        <input type="submit" onClick={sendHundler} data-testid="addreply-sendBtn" value="Send"/>
+        <input
+          type="submit"
+          onClick={sendHundler}
+          data-testid="addreply-sendBtn"
+          value="Send"
+        />
       </div>
     </div>
   );

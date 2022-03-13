@@ -69,12 +69,16 @@ export default function Reply({ reply }) {
                 <picture>
                   <source
                     srcSet={
-                      require(`../assets/${reply.user.image.webp}`).default
+                      window.location.origin +
+                      `/assets/${reply.user.image.png}`
                     }
                     alt={reply.user.username + " photo"}
                   />
                   <img
-                    src={require(`../assets/${reply.user.image.png}`).default}
+                    src={
+                      window.location.origin +
+                      `/assets/${reply.user.image.png}`
+                    }
                     alt={reply.user.username + " photo"}
                   />
                 </picture>
@@ -189,7 +193,6 @@ export default function Reply({ reply }) {
                       className="edit-action"
                       id="edit-action"
                       data-testid={`reply_edit_action_${reply.content}`}
-
                       onClick={() => EditHundler(reply.id)}
                     >
                       <img src={iconEdit} alt="edit icon" />
