@@ -39,11 +39,11 @@
   }
   @media (min-width: 640px) {
     .reply > div,
-    .comment > div.field-content-contianer {
+    .comment > div.interaction-content-contianer {
       @apply relative flex flex-col mb-4 bg-white rounded-md;
       max-height: 40vh;
     }
-    .comment > div.field-content {
+    .comment > div.interaction-content {
       max-height: none;
     }
     .reply > div > button,
@@ -58,39 +58,39 @@
     border-left: 3px solid #e8e9ed;
     @apply px-4 md:px-5 lg:px-8;
   }
-  .field {
+  .interaction {
     @apply mb-4;
   }
-  .field-content-btn {
+  .interaction-content-btn {
     @apply p-4 bg-white rounded-md sm:flex sm:justify-start sm:flex-col sm:p-6;
   }
-  .field-container {
+  .interaction-container {
     @apply relative bg-white rounded-md sm:flex;
   }
 
-  .field-info-div,
+  .interaction-info-div,
   .reply-info-div {
     flex-basis: 93%;
 
   }
   @media (min-width: 1024px) {
-    .field-info-div,
+    .interaction-info-div,
     .reply-info-div {
       flex-basis: 97%;
   
     }
   }
   
-  .field .field-info-container {
+  .interaction .interaction-info-container {
     @apply flex items-center justify-between mb-4;
   }
-  .field .field-info-container .field-info {
+  .interaction .interaction-info-container .interaction-info {
     @apply flex items-center flex-nowrap;
   }
-  .field .field-info picture {
+  .interaction .interaction-info picture {
     @apply w-10 mr-4;
   }
-  .field .field-info .field-userName {
+  .interaction .interaction-info .interaction-userName {
     @apply mr-4 font-bold text-neutral-darkBlue;
   }
   .reply .reply-info .reply-userName {
@@ -99,39 +99,39 @@
   .youSpan {
     @apply p-2 py-0 mr-3 text-sm text-white rounded-sm bg-primary-moderateBlue;
   }
-  .field .field-info .field-created-time {
+  .interaction .interaction-info .interaction-created-time {
     @apply text-neutral-grayishBlue;
   }
   .reply .reply-info .reply-created-time {
     @apply text-sm md:text-base;
   }
-  .field .field-content {
+  .interaction .interaction-content {
     @apply mb-4 text-neutral-grayishBlue sm:mb-0;
     word-break: break-word;
   }
 
-  .field .field-content span {
+  .interaction .interaction-content span {
     @apply font-bold text-primary-moderateBlue;
   }
-  .field .field-actions {
+  .interaction .interaction-actions {
     @apply flex items-center justify-between mt-4 sm:mt-0;
   }
-  .field .score {
+  .interaction .score {
     @apply flex items-center p-1 px-2 bg-neutral-socreBg rounded-xl sm:mr-4 sm:flex-col sm:p-2 sm:py-4 sm:px-3;
     /* w-10 */
     height: fit-content;
   }
-  .field .score > *:not(:last-child) {
+  .interaction .score > *:not(:last-child) {
     @apply mr-5 sm:mb-5 sm:mr-0;
   }
-  .field .score > p {
+  .interaction .score > p {
     @apply font-bold text-primary-moderateBlue;
   }
-  .field .score img {
+  .interaction .score img {
     @apply transition-all cursor-pointer;
     height: fit-content;
   }
-  .field .score img:hover {
+  .interaction .score img:hover {
     filter: invert(91%) sepia(54%) saturate(1360%) hue-rotate(212deg)
       brightness(95%) contrast(80%);
   }

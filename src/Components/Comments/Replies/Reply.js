@@ -35,9 +35,9 @@ export default function Reply({ reply }) {
   };
 
   return (
-    <div className="field reply" data-testid={`reply_${reply.id}`}>
-      <div className="field-content-btn">
-        <div className="field-container">
+    <div className="interaction reply" data-testid={`reply_${reply.id}`}>
+      <div className="interaction-content-btn">
+        <div className="interaction-container">
           {IsBigMedia && (
             <div className="score">
               <img
@@ -64,8 +64,8 @@ export default function Reply({ reply }) {
             </div>
           )}
           <div className="reply-info-div">
-            <div className="field-info-container">
-              <div className="field-info">
+            <div className="interaction-info-container">
+              <div className="interaction-info">
                 <picture>
                   <source
                     srcSet={
@@ -83,16 +83,16 @@ export default function Reply({ reply }) {
                   />
                 </picture>
 
-                <h1 className="field-userName ">{reply.user.username}</h1>
+                <h1 className="interaction-userName ">{reply.user.username}</h1>
                 {reply.user.username === Data.currentUser.username && (
                   <span className="youSpan">you</span>
                 )}
-                <h3 className="field-created-time ">{reply.createdAt}</h3>
+                <h3 className="interaction-created-time ">{reply.createdAt}</h3>
               </div>
 
               {IsBigMedia &&
                 (reply.user.username === Data.currentUser.username ? (
-                  <div className="field-actions">
+                  <div className="interaction-actions">
                     <div
                       className="delete-action"
                       onClick={() => Dispatch(addDeletingReplyId(reply.id))}
@@ -127,7 +127,7 @@ export default function Reply({ reply }) {
 
             <p
               suppressContentEditableWarning={true}
-              className="field-content"
+              className="interaction-content"
               data-testid={`replyContent_${reply.content}`}
               id={`replyContent_${reply.id}`}
             >
@@ -144,7 +144,7 @@ export default function Reply({ reply }) {
           </div>
 
           {!IsBigMedia && (
-            <div className="field-actions">
+            <div className="interaction-actions">
               <div className="score">
                 <img
                   src={iconPlus}
@@ -171,7 +171,7 @@ export default function Reply({ reply }) {
                 />
               </div>
               {reply.user.username === Data.currentUser.username ? (
-                <div className="field-actions">
+                <div className="interaction-actions">
                   <div
                     className="delete-action"
                     data-testid={`reply_delete_Action_${reply.id}`}
@@ -201,7 +201,7 @@ export default function Reply({ reply }) {
                   )}
                 </div>
               ) : (
-                <div className="field-actions">
+                <div className="interaction-actions">
                   <div
                     className="reply-action"
                     data-testid={`reply_reply_action_${reply.id}`}

@@ -39,9 +39,9 @@ const Comment = ({ comment }) => {
   };
   let addReplyId = 500;
   return (
-    <div className="comment field" data-testid={`comment_${comment.id}`}>
-      <div className="field-content-btn">
-        <div className="field-container">
+    <div className="comment interaction" data-testid={`comment_${comment.id}`}>
+      <div className="interaction-content-btn">
+        <div className="interaction-container">
           {IsBigMedia && (
             <div className="score">
               <img
@@ -76,9 +76,9 @@ const Comment = ({ comment }) => {
               />
             </div>
           )}
-          <div className="field-info-div">
-            <div className="field-info-container">
-              <div className="field-info">
+          <div className="interaction-info-div">
+            <div className="interaction-info-container">
+              <div className="interaction-info">
                 <picture>
                   <source
                     srcSet={
@@ -96,16 +96,16 @@ const Comment = ({ comment }) => {
                   />
                 </picture>
 
-                <h1 className="field-userName ">{comment.user.username}</h1>
+                <h1 className="interaction-userName ">{comment.user.username}</h1>
                 {comment.user.username === Data.currentUser.username && (
                   <span className="youSpan">you</span>
                 )}
-                <h3 className="field-created-time">{comment.createdAt}</h3>
+                <h3 className="interaction-created-time">{comment.createdAt}</h3>
               </div>
 
               {IsBigMedia &&
                 (comment.user.username === Data.currentUser.username ? (
-                  <div className="field-actions">
+                  <div className="interaction-actions">
                     <div
                       className="delete-action"
                       data-testid={`comment_delete_action_${comment.content}`}
@@ -143,7 +143,7 @@ const Comment = ({ comment }) => {
             <p
               suppressContentEditableWarning={true}
               className={
-                sectionSlice.editingCommentId !== comment.id && "field-content"
+                sectionSlice.editingCommentId !== comment.id && "interaction-content"
               }
               data-testid={`commentContent_${comment.content}`}
               id={`commentContent_${comment.id}`}
@@ -152,7 +152,7 @@ const Comment = ({ comment }) => {
             </p>
           </div>
           {!IsBigMedia && (
-            <div className="field-actions">
+            <div className="interaction-actions">
               <div className="score">
                 <img
                   src={iconPlus}
@@ -186,7 +186,7 @@ const Comment = ({ comment }) => {
                 />
               </div>
               {comment.user.username === Data.currentUser.username ? (
-                <div className="field-actions">
+                <div className="interaction-actions">
                   <div
                     className="delete-action"
                     data-testid={`comment_delete_action_${comment.content}`}
