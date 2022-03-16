@@ -69,16 +69,12 @@ export default function Reply({ reply }) {
                 <picture>
                   <source
                     srcSet={
-                      window.location.origin +
-                      `/assets/${reply.user.image.png}`
+                      require(`../assets/${reply.user.image.webp}`)
                     }
                     alt={reply.user.username + " photo"}
                   />
                   <img
-                    src={
-                      window.location.origin +
-                      `/assets/${reply.user.image.png}`
-                    }
+                    src={require(`../assets/${reply.user.image.png}`)}
                     alt={reply.user.username + " photo"}
                   />
                 </picture>
