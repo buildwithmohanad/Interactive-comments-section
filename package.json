@@ -30,6 +30,7 @@
     "start": "webpack-dev-server --config=webpack.config.dev.js --open",
     "prod": "webpack --config=webpack.config.prod.js",
     "deploy": "gh-pages -d dist",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

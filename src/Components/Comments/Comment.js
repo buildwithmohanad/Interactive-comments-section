@@ -96,11 +96,15 @@ const Comment = ({ comment }) => {
                   />
                 </picture>
 
-                <h1 className="interaction-userName ">{comment.user.username}</h1>
+                <h1 className="interaction-userName ">
+                  {comment.user.username}
+                </h1>
                 {comment.user.username === Data.currentUser.username && (
                   <span className="youSpan">you</span>
                 )}
-                <h3 className="interaction-created-time">{comment.createdAt}</h3>
+                <h3 className="interaction-created-time">
+                  {comment.createdAt}
+                </h3>
               </div>
 
               {IsBigMedia &&
@@ -143,7 +147,8 @@ const Comment = ({ comment }) => {
             <p
               suppressContentEditableWarning={true}
               className={
-                sectionSlice.editingCommentId !== comment.id && "interaction-content"
+                sectionSlice.editingCommentId !== comment.id &&
+                "interaction-content"
               }
               data-testid={`commentContent_${comment.content}`}
               id={`commentContent_${comment.id}`}
