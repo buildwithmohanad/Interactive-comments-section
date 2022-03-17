@@ -43,14 +43,14 @@ export default function AddReply({ Data, commentUserName, replyUserName }) {
         <picture>
           <source
             srcSet={
-              window.location.origin + `/assets/${Data.currentUser.image.webp}`
-            }
+              window.location.origin +
+              `/assets/${Data.currentUser.image.webp}`
+              }
             alt={Data.currentUser.username + " photo"}
           />
           <img
-            src={
-              window.location.origin + `/assets/${Data.currentUser.image.png}`
-            }
+            src={     window.location.origin +
+              `/assets/${Data.currentUser.image.png}`}
             alt={Data.currentUser.username + " photo"}
           />
         </picture>

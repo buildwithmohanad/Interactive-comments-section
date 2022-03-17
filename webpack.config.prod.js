@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const path = require("path");
 const stylesHandler = "style-loader";
@@ -57,7 +57,6 @@ module.exports = {
         },
       }),
       new TerserPlugin(),
-
     ],
   },
 };

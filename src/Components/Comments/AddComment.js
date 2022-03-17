@@ -48,8 +48,7 @@ export default function AddComment({ Data }) {
             />
             <img
               src={
-                window.location.origin +
-                `/assets/${Data.currentUser.image.png}`
+                window.location.origin + `/assets/${Data.currentUser.image.png}`
               }
               alt={Data.currentUser.username + " photo"}
             />
