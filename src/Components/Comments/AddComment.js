@@ -41,14 +41,14 @@ export default function AddComment({ Data }) {
           <picture>
             <source
               srcSet={
-                window.location.origin +
-                `/assets/${Data.currentUser.image.webp}`
+                require(`./assets/${Data.currentUser.image.png}`)
+
               }
               alt={Data.currentUser.username + " photo"}
             />
             <img
               src={
-                window.location.origin + `/assets/${Data.currentUser.image.png}`
+                require(`./assets/${Data.currentUser.image.png}`)
               }
               alt={Data.currentUser.username + " photo"}
             />

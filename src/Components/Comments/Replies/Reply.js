@@ -15,7 +15,7 @@ import iconMinus from "../assets/images/icon-minus.svg";
 import iconReply from "../assets/images/icon-reply.svg";
 import iconEdit from "../assets/images/icon-edit.svg";
 import iconDelete from "../assets/images/icon-delete.svg";
-
+import sd from "../assets/images/avatars/image-ramsesmiron.webp";
 export default function Reply({ reply }) {
   const { Data, editingReplyId } = useSelector((state) => state.sectionSlice);
   const Dispatch = useDispatch();
@@ -33,7 +33,7 @@ export default function Reply({ reply }) {
     );
     Dispatch(clearEditingReplyId());
   };
-
+  console.log(`../assets/${reply.user.image.webp}`);
   return (
     <div className="interaction reply" data-testid={`reply_${reply.id}`}>
       <div className="interaction-content-btn">
@@ -69,16 +69,13 @@ export default function Reply({ reply }) {
                 <picture>
                   <source
                     srcSet={
-                      window.location.origin +
-                      `/assets/${reply.user.image.webp}`
+                      require(`../assets/${reply.user.image.webp}`)
                     }
-                    alt={reply.user.username + " photo"}
+                    alt={"avatar"}
                   />
                   <img
-                    src={
-                      window.location.origin + `/assets/${reply.user.image.png}`
-                    }
-                    alt={reply.user.username + " photo"}
+                    src={require(`../assets/${reply.user.image.png}`)}
+                    alt={"avatar"}
                   />
                 </picture>
 

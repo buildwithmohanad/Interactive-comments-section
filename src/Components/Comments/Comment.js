@@ -82,15 +82,15 @@ const Comment = ({ comment }) => {
                 <picture>
                   <source
                     srcSet={
-                      window.location.origin +
-                      `/assets/${comment.user.image.png}`
+                      require(`./assets/${comment.user.image.webp}`)
+
                     }
                     alt={comment.user.username + " photo"}
                   />
                   <img
                     src={
-                      window.location.origin +
-                      `/assets/${comment.user.image.png}`
+                      require(`./assets/${comment.user.image.webp}`)
+
                     }
                     alt={comment.user.username + " photo"}
                   />

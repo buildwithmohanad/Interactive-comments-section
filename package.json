@@ -1,5 +1,5 @@
 {
-  "name": "commentssection",
+  "name": "react-app",
   "homepage": "http://Mohannad-AlDardiri.github.io/Interactive-comments-section",
   "version": "0.1.0",
   "private": true,
@@ -17,10 +17,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --config=webpack.config.dev.js",
-    "prod": "webpack --config=webpack.config.prod.js",
-    "deploy": "gh-pages -d dist",
+    "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
