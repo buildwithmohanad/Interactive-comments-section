@@ -59,5 +59,7 @@ and I have learned how to fetch data with redux toolkit by create async thunk fu
 
 ## Author
 
+- Linkedin - [@mohanad-aldardiry](https://www.linkedin.com/in/mohanad-aldardiry-175614239/)
 - Frontend Mentor - [@Mohannad-AlDardiri](https://www.frontendmentor.io/profile/Mohannad-AlDardiri)
 - Twitter - [@MohanadDardiry](https://www.twitter.com/MohanadDardiry)
+
