@@ -12,7 +12,6 @@ This is a solution to the [Interactive comments section challenge on Frontend Me
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
-- [Author](#author)
 
 ## Overview
 
@@ -33,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click here](https://github.com/Mohannad-AlDardiri/Interactieve-comments-section)
-- Live Site URL: [Click here](https://mohannad-aldardiri.github.io/Interactive-comments-section)
+- Solution URL: [Click here](https://github.com/ahmed-eldardeery/Interactieve-comments-section)
+- Live Site URL: [Click here](https://ahmed-eldardeery.github.io/Interactive-comments-section)
 
 ## My process
 
@@ -57,9 +56,5 @@ and I have learned how to fetch data with redux toolkit by create async thunk fu
 - [DEV community](https://dev.to/) - In this community, there is a lot of professional articles that helped me a lot in this project
 - [Webpack and Dynamic Imports](https://medium.com/front-end-weekly/webpack-and-dynamic-imports-doing-it-right-72549ff49234) - This is an amazing article which helped me with dynamic imports. I'd recommend it to anyone still learning this concept.
 
-## Author
 
-- Linkedin - [@mohanad-aldardiry](https://www.linkedin.com/in/mohanad-aldardiry-175614239/)
-- Frontend Mentor - [@Mohannad-AlDardiri](https://www.frontendmentor.io/profile/Mohannad-AlDardiri)
-- Twitter - [@MohanadDardiry](https://www.twitter.com/MohanadDardiry)
 
