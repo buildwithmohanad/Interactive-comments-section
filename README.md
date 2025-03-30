@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click here](https://github.com/ahmed-eldardeery/Interactieve-comments-section)
-- Live Site URL: [Click here](https://ahmed-eldardeery.github.io/Interactive-comments-section)
+- Solution URL: [Click here](https://github.com/buildwithmohanad/Interactieve-comments-section)
+- Live Site URL: [Click here](https://buildwithmohanad.github.io/Interactive-comments-section)
 
 ## My process
 
