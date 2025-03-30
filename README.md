@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click here](https://github.com/buildwithmohanad/Interactieve-comments-section)
+- Solution URL: [Click here](https://github.com/buildwithmohanad/Interactive-comments-section)
 - Live Site URL: [Click here](https://buildwithmohanad.github.io/Interactive-comments-section)
 
 ## My process
